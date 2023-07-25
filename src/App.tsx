@@ -12,15 +12,16 @@ function App() {
         lg:`"nav    nav"
             "aside main"
             "aside main"`,
+        // md: `"nav    nav"
+        //       "main main"` 
       }} 
-      templateRows={'.1fr .2fr 2fr'}
       gap={"8px"}
     >
-      <GridItem bg={'purple'} area={"nav"}>
+      <GridItem area={"nav"}>
         <NavBar></NavBar>
       </GridItem>
       <Show above="lg" >
-        <GridItem bg={'purple'} area={"aside"}>
+        <GridItem area={"aside"}>
         <GenreList/>
       </GridItem>
       </Show>

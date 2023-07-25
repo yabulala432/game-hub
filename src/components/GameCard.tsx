@@ -12,7 +12,7 @@ interface GameCardProps {
 
 export default function GameCard({ game }: GameCardProps) {
   return (
-    <Card borderRadius={30} overflow={"hidden"}>
+    <Card>
       <Image src={getOptimizedImages(game.background_image)}></Image>
       <CardBody>
         <Heading fontSize={"2xl"}>{game.name}</Heading>

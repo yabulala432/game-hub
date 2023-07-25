@@ -1,5 +1,7 @@
+import noImagePlaceholder from '../assets/no-image-placeholder.webp'
+
 export function getOptimizedImages(imageUrl: string): string {
-  if (!imageUrl) return '';
+  if (!imageUrl) return noImagePlaceholder ;
 
   const target: string = "media/";
   let index: number = imageUrl.indexOf(target) + target.length;

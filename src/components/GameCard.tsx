@@ -1,8 +1,8 @@
 import { Card, Image, CardBody, Heading, HStack } from "@chakra-ui/react";
 import { Game } from "../hooks/useGames";
-import PlatformIconList from "./PlatformIconList";
+import PlatformIconList from "./PlatformIconList.tsx";
 import CriticScore from "./CriticScore";
-import {getOptimizedImages} from "../services/get-optimized-images.ts";
+import { getOptimizedImages } from "../services/get-optimized-images.ts";
 
 interface GameCardProps {
   game: Game;
@@ -10,7 +10,7 @@ interface GameCardProps {
   background_image: string;
 }
 
-export default function GameCard({ game }: GameCardProps) {
+function GameCard({ game }: GameCardProps) {
   return (
     <Card>
       <Image src={getOptimizedImages(game.background_image)}></Image>
@@ -26,3 +26,4 @@ export default function GameCard({ game }: GameCardProps) {
     </Card>
   );
 }
+export default GameCard;

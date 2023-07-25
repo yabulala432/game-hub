@@ -29,7 +29,7 @@ function GameGrid({selectedGenre}:GameGridProps) {
         {data.map((game) => {
           return (
             <GameCardContainer key={game.id}>
-              <GameCard  game={game} name={""} background_image={""} />{" "}
+              <GameCard  game={game}/>
             </GameCardContainer>
           );
         })}

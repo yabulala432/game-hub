@@ -5,9 +5,10 @@ import GenreSkeleton from "./GenreSkeleton";
 
 interface GenreListProps{
   onSelectGenre: (genre: Genres) => void;
+  selectedGenre: Genres | null;
 }
 
-const GenreList = ({onSelectGenre}:GenreListProps) => {
+const GenreList = ({selectedGenre,onSelectGenre}:GenreListProps) => {
   const { data, loading } = useGenres();
   const numOfGenres = [1, 2, 3, 4, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8];
   if (loading)
@@ -29,7 +30,10 @@ const GenreList = ({onSelectGenre}:GenreListProps) => {
                 boxSize={"50px"}
                 src={getOptimizedImages(genre.image_background)}
               />
-              <Button onClick={() => onSelectGenre(genre)}variant={'link'} fontSize="lg">{genre.name}</Button>
+              <Button fontWeight={genre.id===selectedGenre?.id ? 'bold': 'normal'}
+                onClick={() => {
+                onSelectGenre(genre);
+              }} variant={'link'} fontSize="lg">{genre.name}</Button>
             </HStack>
           </ListItem>
         );

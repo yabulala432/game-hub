@@ -1,21 +1,38 @@
 import { Menu, MenuButton, MenuItem, MenuList } from "@chakra-ui/react";
 
-const SortSelector = () => {
+interface SortSelectorProps{
+    onSelectSortOrder: (sortOrder: string) => void
+    sortOrder: string;
+}
+
+const SortSelector = ({onSelectSortOrder,sortOrder}:SortSelectorProps) => {
+  const sortOrders = [
+    { value: "", label: "Relevance" },
+    { value: "-added", label: "Date added" },
+    { value: "name", label: "Name" },
+    { value: "-released", label: "Release Data" },
+    { value: "-metacritic", label: "Popularity" },
+    { value: "-rating", label: "Rating" },
+  ];
+    const currentSortOrder = sortOrders.find(order => {
+       return (order.value === sortOrder);
+    })
+    
   return (
     <Menu>
-          <MenuButton as={"button"}>
-              Order by: Relevance
-      </MenuButton>
+      <MenuButton as={"button"}>Order by: {currentSortOrder?.label || 'Relevance'}</MenuButton>
       <MenuList>
-        <MenuItem>Relevance</MenuItem>
-        <MenuItem>Data Added</MenuItem>
-        <MenuItem>Name</MenuItem>
-        <MenuItem>Release Date</MenuItem>
-        <MenuItem>Popularity</MenuItem>
-        <MenuItem>Average Rating</MenuItem>
+        {sortOrders.map((order) => {
+          return (
+              <MenuItem onClick={()=>onSelectSortOrder(order.value)}
+                  key={order.value} value={order.value}>
+              {order.label}
+            </MenuItem>
+          );
+        })}
       </MenuList>
     </Menu>
   );
-}
+};
 
-export default SortSelector
+export default SortSelector;

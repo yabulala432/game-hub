@@ -1,4 +1,6 @@
 export function getOptimizedImages(imageUrl: string): string {
+  if (!imageUrl) return '';
+
   const target: string = "media/";
   let index: number = imageUrl.indexOf(target) + target.length;
   const optimizedImage: string =

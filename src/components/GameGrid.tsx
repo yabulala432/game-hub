@@ -4,7 +4,7 @@ import GameCard from "./GameCard";
 import GameCardSkeleton from "./GameCardSkeleton";
 import GameCardContainer from "./GameCardContainer";
 
-export default function GameGrid() {
+function GameGrid() {
   const { data, error, loading } = useGames();
   const numberofSkeletons = [1, 2, 3, 4, 5, 6, 7, 8];
   return (
@@ -13,7 +13,7 @@ export default function GameGrid() {
       <SimpleGrid
         columns={{ sm: 1, md: 2, lg: 3, xl: 4 }}
         padding={"2px"}
-        spacing={"1px"}
+        spacing={"15px"}
       >
         {loading &&
           numberofSkeletons.map(() => (
@@ -32,3 +32,5 @@ export default function GameGrid() {
     </>
   );
 }
+
+export default GameGrid;

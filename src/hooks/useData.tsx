@@ -13,7 +13,6 @@ function useData<T>(endpoint: string) {
 
   useEffect(() => {
     const controller = new AbortController();
-
     apiClient
       .get<FetchDataResponse<T>>(endpoint, {
         signal: controller.signal,
@@ -32,6 +31,7 @@ function useData<T>(endpoint: string) {
     return () => controller.abort();
   }, []);
 
+  
   return { data, error, loading };
 }
 

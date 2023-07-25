@@ -9,9 +9,9 @@ function App() {
       templateAreas={{
         base: `"nav" "main"`,
         lg:`"nav    nav"
-                      "aside main"
-                      "aside main"`,
-      }}
+            "aside main"
+            "aside main"`,
+      }} 
       gap={"10px"}
     >
       <GridItem area={"nav"}>

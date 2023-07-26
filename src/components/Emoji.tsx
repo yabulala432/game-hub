@@ -1,7 +1,7 @@
 import bullsEye from "../assets/bulls-eye.webp";
 import meh from "../assets/meh.webp";
 import thumbsUp from "../assets/thumbs-up.webp";
-import { Image,Icon } from "@chakra-ui/react";
+import { Image } from "@chakra-ui/react";
 
 interface EmojiProps {
   rating: number;

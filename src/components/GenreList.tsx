@@ -1,4 +1,4 @@
-import { HStack, List, ListItem, Image, Button } from "@chakra-ui/react";
+import { HStack, List, ListItem, Image, Button, Heading } from "@chakra-ui/react";
 import useGenres, { Genres } from "../hooks/useGenres";
 import { getOptimizedImages } from "../services/get-optimized-images";
 import GenreSkeleton from "./GenreSkeleton";
@@ -20,17 +20,24 @@ const GenreList = ({selectedGenre,onSelectGenre}:GenreListProps) => {
       </List>
     ));
   return (
+    <>
+    <Heading>Genres</Heading>
     <List padding={5}>
-      {data.map((genre) => {
+      {data.map((genre: Genres) => {
         return (
           <ListItem marginY={4} key={genre.id}>
             <HStack>
               <Image
+                objectFit={'cover'}
                 borderRadius={"20px"}
                 boxSize={"50px"}
                 src={getOptimizedImages(genre.image_background)}
               />
-              <Button fontWeight={genre.id===selectedGenre?.id ? 'bold': 'normal'}
+              <Button
+                textAlign={'left'}
+                padding='6px'
+                whiteSpace={'normal'}
+                fontWeight={genre.id === selectedGenre?.id ? 'bold' : 'normal'}
                 onClick={() => {
                 onSelectGenre(genre);
               }} variant={'link'} fontSize="lg">{genre.name}</Button>
@@ -38,7 +45,7 @@ const GenreList = ({selectedGenre,onSelectGenre}:GenreListProps) => {
           </ListItem>
         );
       })}
-    </List>
+    </List></>
   );
 };
 

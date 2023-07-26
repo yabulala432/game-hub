@@ -15,13 +15,13 @@ function GameCard({ game }: GameCardProps) {
     <Card>
       <Image src={getOptimizedImages(game.background_image)}></Image>
       <CardBody>
-        <Heading fontSize={"2xl"}>{game.name}</Heading>
         <HStack justifyContent={"space-between"}>
           <PlatformIconList
             platforms={game.parent_platforms.map((p) => p.platform)}
           />
           <CriticScore value={game.metacritic} />
         </HStack>
+        <Heading fontSize={"2xl"}>{game.name}</Heading>
       </CardBody>
     </Card>
   );

@@ -3,6 +3,7 @@ import { Game } from "../hooks/useGames";
 import PlatformIconList from "./PlatformIconList.tsx";
 import CriticScore from "./CriticScore";
 import { getOptimizedImages } from "../services/get-optimized-images.ts";
+import Emoji from "./Emoji.tsx";
 
 interface GameCardProps {
   game: Game;
@@ -21,7 +22,10 @@ function GameCard({ game }: GameCardProps) {
           />
           <CriticScore value={game.metacritic} />
         </HStack>
-        <Heading fontSize={"2xl"}>{game.name}</Heading>
+        <HStack justifyContent={'space-between'}>
+          <Heading fontSize={"2xl"}>{game.name}</Heading>
+          <Emoji rating={game.rating_top} />
+        </HStack>
       </CardBody>
     </Card>
   );

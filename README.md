@@ -1,2 +1,6 @@
-### Game-Hub
-![screenshot-project]([https://github.com/yabulala432/game-hub/tree/main/src/assets](https://raw.githubusercontent.com/yabulala432/game-hub/main/src/assets/screenShot.webp)https://raw.githubusercontent.com/yabulala432/game-hub/main/src/assets/screenShot.webp)
+# Game-Hub
+
+### This project uses rawg-api to fetch the game data
+
+![screenshot-project](https://github.com/yabulala432/game-hub/blob/main/src/assets/screenShot.jpg)
+
